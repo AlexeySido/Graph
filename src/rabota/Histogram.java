@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //класс рисования гистограммы распределения количества потомков узлов
 public class Histogram {
 
-    //public ArrayList<Integer> histogram;//список для хранениия количества случайно выпавших потомков узла
+    //public ArrayList<Integer> histogram;//список для хранения количества случайно выпавших потомков узла
     public int[] child;
     int r;//номер графа для которого строится гистограмма (всегда последний граф)
 

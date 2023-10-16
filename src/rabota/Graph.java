@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-//класс графического предстваления графа
+//класс графического представления графа
 public class Graph {
 
-    //создаём список и  массив в котором будут помещаться узлы графов
+    //создаём список и массив в котором будут помещаться узлы графов
     ArrayList<Node[]> graphList;
     Node[] graph;
     Node current;
@@ -39,7 +39,7 @@ public class Graph {
                 graphList.add(node);
                 if(counter>=20){break;}
                 }
-        }while (counter < 20);
+        }while ((counter < 20) && (counter < nodes.size()));
 
 
 //задаём координаты узлов
@@ -70,9 +70,9 @@ public class Graph {
                     }
                     }
                 }
-        //offset отвечат за расстояние между двумя соседними узлами, имеющими одного предка. Будет изменяться
+        //offset отвечает за расстояние между двумя соседними узлами, имеющими одного предка. Будет изменяться
         //только в том случае если один из узлов массива уровня имеет 2 потомка в противном случае offset не изменяется
-                if (i!=graphList.size()-1&&index==graphList.get(i+1).length) {
+                if (i!=graphList.size()-1 && index==graphList.get(i+1).length) {
                 for (Node node:graphList.get(i)) {
                     if(node.child==2) {
                         x_offset = x_offset / 2;
@@ -87,7 +87,7 @@ public class Graph {
         objects.diagram.setGraphList(graphList);
     }
 
-    //внутрениий класс для рисования объёктов
+    //внутренний класс для рисования объектов
     public class DrawingObjects extends JPanel {
         Graph diagram = new Graph();
 
@@ -114,7 +114,7 @@ public class Graph {
                 for (int j = 0; j < graphList.get(i).length; j++) {
                     current = graphList.get(i)[j];
                     if(current.index==20){break;}
-                    if (current.child == 1 && i!=graphList.size()-1&&diagram.getGraphList().get(i + 1)[index].index<=20) {
+                    if (current.child == 1 && i!=graphList.size()-1 && diagram.getGraphList().get(i + 1)[index].index<=20) {
                       g2d.drawLine(current.x+10, current.y+10, diagram.getGraphList().get(i + 1)[index].x+10, diagram.getGraphList().get(i + 1)[index].y+10);
                       index++;
                     }else if (current.child > 1&&i!=graphList.size()-1) {

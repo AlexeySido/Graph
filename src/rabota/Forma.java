@@ -49,7 +49,7 @@ public class Forma {
 
         //надписи около полей ввода
         JLabel label_1 = new JLabel("Введите значения и нажмите кнопку \"Выполнить расчёт\"");
-        JLabel label_m = new JLabel("m = ");
+//        JLabel label_m = new JLabel("m = 3");
         JLabel label_N = new JLabel("N = ");
         JLabel label_R = new JLabel("R = ");
         JLabel label_rule_A = new JLabel("Правило остановки:");
@@ -72,8 +72,8 @@ public class Forma {
         //размещение элементов на панели
         panel_A.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));//пустые поля вокруг панели
         panel_A.add(label_1);
-        panel_A.add(label_m);
-        panel_A.add(textField_m);
+//      panel_A.add(label_m);
+//      panel_A.add(textField_m);
         panel_A.add(label_N);
         panel_A.add(textField_N);
         panel_A.add(label_R);
@@ -115,15 +115,15 @@ public class Forma {
 
             frame.getContentPane().add(BorderLayout.CENTER, panel_B);
 
-            int m = Integer.parseInt(textField_m.getText()) - 1;
+            int m = 2;
             int n = Integer.parseInt(textField_N.getText());
             int r = Integer.parseInt(textField_R.getText());
 
 //проверка правильности ввода исходных данных
-            if(m<2||r<1||n<2){
+            if(m<2||r<1||n<3){
                 JOptionPane.showMessageDialog(frame,
-                        "Вводимые данные должны удовлеторять следующим требованиям:\n" +
-                                "Целое число\n Значение m>=3\n Количество узлов N>2\n Число генерируемых графов R>0\n" +
+                        "Вводимые данные должны удовлетворять следующим требованиям:\n" +
+                                "Целое число\n Количество узлов N>3\n Число генерируемых графов R>0\n" +
                                 "Нажмите ОК и повторите ввод данных!",
                         "Внимание",
                         JOptionPane.WARNING_MESSAGE);
